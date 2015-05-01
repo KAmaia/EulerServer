@@ -28,17 +28,21 @@ class Main {
 		ServerSocket listener = null;
 		boolean running = true;
 		//infinite loop so the server never closes
-		while (running)
+		while (running) {
 			try {
 				listener = new ServerSocket(portNumber);
 				Thread ch = new Thread(new ConnectionHandler(listener.accept(), ecalc));
 				ch.start();
-				listener.close();
 
-			} catch (BindException e) {
+			}
+			catch (BindException e) {
 				System.out.println("Error Binding Port: This Usually Means The Server Is Running Already.");
 
 				running = false;
 			}
+
+			listener.close();
+		}
+
 	}
 }

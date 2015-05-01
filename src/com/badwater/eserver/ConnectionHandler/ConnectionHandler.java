@@ -37,11 +37,11 @@ public class ConnectionHandler implements Runnable {
 		catch (IOException e) {
 			e.printStackTrace();
 		}
-		/*try {
+		try {
 			clientConnection.close();
 		} catch (IOException e) {
 			e.printStackTrace();
-		}*/
+		}
 	}
 }
 
