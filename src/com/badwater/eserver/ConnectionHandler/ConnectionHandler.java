@@ -32,14 +32,16 @@ public class ConnectionHandler implements Runnable {
 				out.print("<html><head><title>Euler Calculator</title></head><center>Current Euler Value: " +
 					             data[0] + "<br />For Value Of: " + data[1] + "</center></html>\r\n");
 				out.flush();
-				Thread.sleep(1000);
-				clientConnection.close();
 			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (InterruptedException e) {
+		}
+		catch (IOException e) {
 			e.printStackTrace();
 		}
+		/*try {
+			clientConnection.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}*/
 	}
 }
 
